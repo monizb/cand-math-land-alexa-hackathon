@@ -5,17 +5,17 @@ var MathHelper = require("./math_helper");
 function IntentHandler() {
   var mathHelper = new MathHelper();
   var getStartedText = 'Now let\'s start. How many math questions would you like to have? ',
-    questionChoiceText = 'Please pick a number between 10 and 30. ',
-    welcomeText = 'Welcome to Chocolate Math Land. ' +
-      getSound('start.mp3') +
-      'In Chocolate Math Land, you earn chocolates by playing math games with me. ' +
-      'The more math problems you solve, the more chocolates you will earn.  You may need pencil and paper for some of the problems. ' +
+    questionChoiceText = 'Please pick a number between 5 and 20. ',
+    welcomeText = 'Welcome to Candy Math Land. ' +
+      getSound('game-intro1.mp3') +
+      'In Candy Math Land, you earn candies by playing math games with me. ' +
+      'The more math problems you solve, the more candies you will earn. Let\'s see how many candies you can win!  ' +
       getStartedText + questionChoiceText;
 
   var questionsTotalIntent = {
     "utterances": {
       "slots": {"answerSlot": "NUMBER"}
-      , "utterances": ["{-|answerSlot} questions"]
+      , "utterances": ["{-|questionSlot} questions"]
     },
     name: 'questionsTotalIntent',
     callFunc: handleQuestionTotalIntent
@@ -92,7 +92,7 @@ function IntentHandler() {
 
   function handleTotal(req, res, total) {
     var total = parseInt(total);
-    if (!total || isNaN(total) || total < 10 || total > 30) {
+    if (!total || isNaN(total) || total < 5 || total > 20) {
       pickNumberOfQuestions(req, res, total);
       return true;
     }
@@ -152,7 +152,7 @@ function IntentHandler() {
   }
 
   function goodBye(req, res) {
-    var goodBye = ' It was a pleasure playing with you. Come to visit Chocolate Math Land soon. Goodbye!';
+    var goodBye = ' It was a pleasure playing with you. Come to visit Candy Math Land soon. Goodbye!';
     res.say(goodBye).shouldEndSession(true);
   }
 
@@ -170,7 +170,7 @@ function IntentHandler() {
   }
 
   function getSound(name) {
-    return '<audio src="https://math-sweet.herokuapp.com/chocolate/' + name + '" />';
+    return '<audio src="https://math-sweet.herokuapp.com/sounds/' + name + '" />';
   }
 
   function getQuestion(index, questions, score) {
@@ -212,18 +212,18 @@ function IntentHandler() {
 
   function getResultText(isCorrect, answer, scoreTotal) {
     var output = 'You answered ' + answer + '. ';
-    var sound = getSound(isCorrect ? 'cheer1.mp3' : 'wrong1.mp3');
+    var sound = getSound(isCorrect ? 'cheers1.mp3' : 'wrong1.mp3');
     var result = sound + 'The answer is ' + (isCorrect ? 'correct' : 'wrong') + '. ';
 
     if (answer === 'donotknow') {
-      return 'It is ok. You now have ' + (scoreTotal).toString() + ' chocolates. ';
+      return 'It is ok. You now have ' + (scoreTotal).toString() + ' candies. ';
     }
 
     if (isCorrect) {
-      result += 'You earned 10 chocolates. ';
+      result += 'You earned 10 candies. ';
     }
 
-    result += 'You now have ' + (scoreTotal).toString() + ' chocolates. ';
+    result += 'You now have ' + (scoreTotal).toString() + ' candies. ';
 
     return output + result;
 
@@ -231,13 +231,13 @@ function IntentHandler() {
 
   function getSectionCompleteOutput(scoreTotal) {
 
-    var totalText = scoreTotal > 0 ? 'Your have earned ' + scoreTotal + ' chocolates. ' :
-      'Sorry, you did not earn any chocolates. Don\'t worry, you will do better next time. ';
-    var gameOverSound = getSound('completed.mp3');
+    var totalText = scoreTotal > 0 ? 'You have earned ' + scoreTotal + ' candies. ' :
+      'Sorry buddy, you did not earn any candies. Don\'t worry, you will do better next time. ';
+    var gameOverSound = getSound('game-over1.mp3');
 
-    return gameOverSound + 'Good job. You have completed the chocolate Math game. '
+    return gameOverSound + 'Good job. You have completed the Candy Math Land game. '
       + totalText
-      + ' It was a pleasure playing with you. Come to visit chocolate Math Land soon. Goodbye!';
+      + ' It was a pleasure playing with you. Come to visit Candy Math Land soon. Goodbye!';
   }
 
   function getSectionNextQuestion(questionIndex, questions, scoreTotal) {
