@@ -106,7 +106,7 @@ Examples:
 ### Utterances
 
 ```
-questionsTotalIntent	{answerSlot} questions
+questionsTotalIntent	{questionSlot} questions
 answerIntent	The answer is {answerSlot}
 answerOnlyIntent	{answerSlot}
 doNotKnowIntent	Don't Know
