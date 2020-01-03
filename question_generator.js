@@ -4,8 +4,8 @@ function QuestionGenerator() {
   var groupAddition = [
     {
       part1: 'At Hogwards magic school, students were practicing magic. Harry Potter turned one flower into ${number1} white doves, ',
-      part2: 'Harmoine turned one leave into ${number2} white doves ',
-      part3: 'Ron turned one stone into ${number3} white doves ',
+      part2: 'Harmoine, turned one leave into ${number2} white doves, ',
+      part3: 'Ron, turned one stone into ${number3} white doves, ',
       question: 'How many white doves did Harry Potter and Harmoine and Ron changed into?'
     },
     {
@@ -20,7 +20,7 @@ function QuestionGenerator() {
       part2: 'and ${number2} ${object} in a medium bag, ',
       part3: 'and ${number3} ${object} in a big bag. ',
       question: 'How many chocolates did ${name1} keep altogether?',
-      object: ['chocolate']
+      object: ['chocolates']
     },
     {
       part1: '${name1} went to visit the fairy land. ${name1} met ${number1} tickle fairies, ',
@@ -84,7 +84,7 @@ function QuestionGenerator() {
 
   var multiplications = [
     {
-      part1: '${name1} works as a babysitter. ${name1} makes ${number1} an hour.  ${name1} worked ${number2} hours, ',
+      part1: '${name1} works as a babysitter. ${name1} makes ${number1} dollars an hour.  ${name1} worked ${number2} hours, ',
       question: 'How many dollars did ${name1} make for that day?'
     },
     {
@@ -109,14 +109,14 @@ function QuestionGenerator() {
     },
     {
       part1: 'Snow White is cleaning the dwarf\'s shed. Oh, my, it is so dirty. There are ${number1} dwarfs. Each dwarf has about ${number2} things need to be scrubbed or thrown out. ',
-      question: 'How many dirty things do Snow White have to scrub or throw out?'
+      question: 'How many dirty things do Snow White has to scrub or throw out?'
     },
     {
       part1: 'Snow White is very sad and she could not eat. The seven dwarfs left tasty little things on the table for her every day, hoping she would eat it. Each one of them left on average ${number1} treats for her. On the ${number2} day, Snow White finally agreed to eat. ',
-      question: 'How many tasty treats did the dwarfs left out for her?'
+      question: 'How many tasty treats did the dwarfs leave out for her?'
     },
     {
-      part1: 'The magic school students were create potions. They were making on average ${number1} bottles of potion per day. After ${number2} days, ',
+      part1: 'The magic school students were creating potions. They were making on average ${number1} bottles of potion per day. After ${number2} days, ',
       question: 'How many bottles did the students make? '
     },
     {
@@ -151,8 +151,8 @@ function QuestionGenerator() {
       question: 'How many days did Tinker Bell work to make the beds?'
     },
     {
-      part1: 'The ministry of Magic was confiscating illegal muggle objects. For the past ${number2} days, they have confiscated ${number1} objects  ',
-      question: 'How many muggle objects did they confiscate each day?'
+      part1: 'The ministry of Magic was confiscating expired potions. For the past ${number2} days, they have confiscated ${number1} potions  ',
+      question: 'How many expired  did they confiscate each day?'
     },
     {
       part1: 'In the enchanted house, there are ${number2} rooms and  ${number1} enchanted beings.  ',
