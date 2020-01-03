@@ -80,15 +80,15 @@ function MathHelper() {
   }
 
   function getRandomNumbersForDivision() {
-    var number1 = Math.ceil(Math.random() * 50)+ 2,
-        number2 = Math.ceil(Math.random() * 20)+ 2;
+    var number1 = Math.ceil(Math.random() * 20)+ 2,
+        number2 = Math.ceil(Math.random() * 10)+ 2;
 
     return [number1 * number2, number1];
   }
 
   function getRandomNumbersForMultiplications() {
-    var number1 = Math.ceil(Math.random() * 50) + 2,
-      number2 = Math.ceil(Math.random() * 20) + 2;
+    var number1 = Math.ceil(Math.random() * 10) + 2,
+      number2 = Math.ceil(Math.random() * 10) + 2;
 
     return [number1, number2];
   }
@@ -170,15 +170,15 @@ function MathHelper() {
   }
 
   function getRandomNumbersForAddition() {
-    var number1 = Math.ceil(Math.random() * 100 + 1),
-      number2 = Math.ceil(Math.random() * 100),
-      number3 = Math.ceil(Math.random() * 50);
+    var number1 = Math.ceil(Math.random() * 30 + 1),
+      number2 = Math.ceil(Math.random() * 20),
+      number3 = Math.ceil(Math.random() * 5);
 
     return [number1, number2, number3];
   }
 
   function getRandomNumbersForSubtraction() {
-    var number1 = Math.ceil(Math.random() * 500 + 5),
+    var number1 = Math.ceil(Math.random() * 30 + 5),
       number2 = Math.ceil(Math.random() * (number1 - 2)),
       number3 = Math.ceil(Math.random() * (number1 - number2 - 2));
 
