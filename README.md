@@ -40,8 +40,7 @@ Examples:
 
 # Notes
 
-- The app is built using alexa-app nide module using npm
-- Server side code / food look up using google place api in node js
+- The app is built using alexa-app node module using npm
 - Use SSML to include audio
 
 ### Intents
